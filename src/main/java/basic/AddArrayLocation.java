@@ -4,36 +4,57 @@ import java.util.Scanner;
 
 public class AddArrayLocation {
     public static void main(String[] args) {
-        int size,location,item,i;
+        System.out.println("Enter the Array size: ");
         Scanner s = new Scanner(System.in);
-        System.out.println("Enter The Array Size: ");
-        size = s.nextInt();
+        int size = s.nextInt();
+        System.out.println("Enter the Array: ");
 
-        int a[] = new int[size+1];
-        System.out.println("Enter The Array: ");
-
-        for (i = 0; i<a.length;i++){
+        int a[] = new int[size + 1];
+        for (int i = 0; i < size; i++) {
             a[i] = s.nextInt();
         }
 
-        System.out.println("Enter Array Location: ");
-        location = s.nextInt();
+        System.out.println("The Array :");
 
-        System.out.println("Enter new Element: ");
-        item = s.nextInt();
-
-        for (i=size; i>location;i--){
-            a[i]=a[i-1];
+        for (int i = 0; i < size; i++) {
+            System.out.print(a[i] + " ");
         }
-        a[location] = item;
+
+        System.out.println("Enter the Index: ");
+
+        int index = s.nextInt();
+        System.out.println("Enter the value: ");
+
+        int value = s.nextInt();
+        //If we create a new array b[] then apply this code
+/*
+        int b[] = new int[size+1];
+        for(int i = 0; i<size+1; i++){
+            if(i<index){
+                b[i] = a[i];
+            }else if(i == index){
+                b[i] = value;
+            }else{
+                b[i] = a[i-1];
+            }
+        }
+        System.out.println("New Array will be:");
+        for(int i = 0; i<size+1;i++){
+            System.out.print(b[i]+" ");
+        }
+*/
+        //if we user old array user this code
+        for (int i = size; i > index; i--) {
+            a[i] = a[i - 1];
+        }
+        a[index] = value;
         size++;
 
-        for (i = 0; i<a.length;i++){
-            System.out.println(a[i]+"");
+        for (int i = 0; i < a.length; i++) {
+            System.out.print(a[i] + " ");
         }
 
     }
-
 
 
 }
