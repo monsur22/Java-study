@@ -3,7 +3,7 @@ package basic;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Test {
+public class LInkedListAdd {
     Node head;
     class Node{
         int data;
@@ -36,7 +36,7 @@ public class Test {
         while (currentNode.next!=null){
             currentNode=currentNode.next;
         }
-       currentNode.next = newNode;
+        currentNode.next = newNode;
     }
 
     public void addPosition(int data, int position){
@@ -46,7 +46,7 @@ public class Test {
             return;
         }
         Node currentNode = head;
-        for(int i = 0; i<(position-2); i++){
+        for(int i = 1; i<(position-1); i++){
             currentNode = currentNode.next;
         }
         newNode.next = currentNode.next;
@@ -65,7 +65,7 @@ public class Test {
     }
     public static void main(String[] args) {
 
-        Test test = new Test();
+        LInkedListAdd test = new LInkedListAdd();
         test.addFirst(5);
         test.addFirst(6);
         test.printData();
