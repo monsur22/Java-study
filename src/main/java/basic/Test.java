@@ -1,78 +1,18 @@
 package basic;
 
-import java.util.Arrays;
+import java.util.*;
 import java.util.Scanner;
 
 public class Test {
-    Node head;
-    class Node{
-        int data;
-        Node next;
 
-        Node(int data){
-            this.data = data;
-            this.next = next;
+    public static void main(String[] args){
+        int[] nums = {-2,1,-3,4,-1,2,1,-5,4};
+        int sum  = 0;
+        for(int i = 0; i<nums.length; i++){
+            sum = nums[i]+sum;
         }
+//        return sum;
+        System.out.println(sum);
     }
 
-    public void addFirst(int data){
-        Node newNode = new Node(data);
-        if(head == null){
-            head = newNode;
-            return;
-        }
-        newNode.next = head;
-        head = newNode;
-    }
-
-    public void addLast(int data){
-        Node newNode = new Node(data);
-
-        if(head == null){
-            head = newNode;
-            return;
-        }
-        Node currentNode = head;
-        while (currentNode.next!=null){
-            currentNode=currentNode.next;
-        }
-       currentNode.next = newNode;
-    }
-
-    public void addPosition(int data, int position){
-        Node newNode = new Node(data);
-        if(head == null){
-            head = newNode;
-            return;
-        }
-        Node currentNode = head;
-        for(int i = 0; i<(position-2); i++){
-            currentNode = currentNode.next;
-        }
-        newNode.next = currentNode.next;
-        currentNode.next = newNode;
-    }
-    public void printData(){
-        if(head == null){
-            System.out.println("This is Empty");
-        }
-        Node currentNode = head;
-        while (currentNode!=null){
-            System.out.print(currentNode.data+ "->");
-            currentNode = currentNode.next;
-        }
-        System.out.println("null");
-    }
-    public static void main(String[] args) {
-
-        Test test = new Test();
-        test.addFirst(5);
-        test.addFirst(6);
-        test.printData();
-        test.addLast(8);
-        test.printData();
-        test.addPosition(3,2);
-        test.printData();
-
-    }
 }
